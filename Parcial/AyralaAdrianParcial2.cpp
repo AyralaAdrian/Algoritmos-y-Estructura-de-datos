@@ -14,14 +14,18 @@ using namespace std;
 #define TOPETALLES 21
 
 struct ty_prenda{
+	
 	string codigo;
 	float precio;
 	int modelo;
+	
 };
 
 struct ty_Modelo{
+	
 	string descripcion;
 	float descuento;	//Porcentaje a aplicar en concepto de descuento para el modelo
+
 };
 
 struct tyVenta{
