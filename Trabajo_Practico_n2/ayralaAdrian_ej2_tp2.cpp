@@ -1,12 +1,3 @@
-/*Ej2. Definir dos cadenas de caracteres cad1 y cad2:
-char cad1[41];
-char cad2[41]=”universidad nacional de avellaneda”;
-a) Copiar cad2 en cad1 tratando ambas cadenas como arreglos de caracteres.
-Verificar después de la copia, mediante la instrucción strlen(),la longitud de
-ambas cadenas.
-b) Hacer lo mismo pero ingresando el contenido de cad2 dentro del programa.
-*/
-
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>

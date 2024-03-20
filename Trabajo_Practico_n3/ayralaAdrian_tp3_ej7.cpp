@@ -1,18 +1,3 @@
-/*Ejercicio 7
-a) Un estacionamiento de la zona céntrica trabaja de 7 a 21hs.y tiene
-capacidad para 10 cocheras; al final del día no queda ningún vehículo
-guardado. El dueño nos pide un programa que tenga un menú
-con cuatro opciones: “Ingreso de vehículo”, “Salida de vehículo”, “Listado” y
-“Fin”.
-La primera opción nos pide el número de patente y la hora de entrada del
-vehículo y lo registra como guardado (si no hay lugar en el estacionamiento se
-debe informar un mensaje por pantalla).
-La segunda opción nos pide el número de patente del vehículo que sale y
-nosotros debemos informar la hora en que ingresó y liberar esa cochera.
-En la tercera opción, debe mostrar por pantalla las patentes de los vehículos
-que están guardados y la hora en que entraron.
-En la cuarta opción, debe verificar que no quede ningún vehículo estacionado*/
-
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
@@ -28,7 +13,8 @@ struct tyVecEst{
 	
 };
 
-// opcion 1
+/// opcion 1
+
 int ingresoOpcion() {
 	
     int opcion;
@@ -87,7 +73,8 @@ void ingreso(tyVecEst &vehiculo, tyVecEst vector[], int &i){
 	
 }
 
-//opcion 2
+///opcion 2
+
 int buscarPatente(tyVecEst vector[], string patente){
 	
 	int i = 0;
@@ -123,7 +110,8 @@ void salida(tyVecEst &vehiculo, tyVecEst vector[]){
 	
 }
 
-//opcion 3
+/// opcion 3
+
 void mostrar(tyVecEst vector[]){
 	
 	for(int i = 0; i < TOPE; i++){
@@ -131,7 +119,8 @@ void mostrar(tyVecEst vector[]){
 	}
 }
 
-//opcion 4
+/// opcion 4
+
 bool estVacio(tyVecEst vector[]){
 	
 	int i = 0;

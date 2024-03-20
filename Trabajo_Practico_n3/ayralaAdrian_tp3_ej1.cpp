@@ -1,10 +1,3 @@
-/*Ejercicio 1: Dado un arreglo de 20 elementos enteros:
-c) Realizar una rutina que obtenga las posiciones donde están ubicados
-el máximo y el mínimo valor.
-d) Realizar una rutina que y muestre por pantalla el valor máximo del
-arreglo y en qué posiciones se encuentra.
-*/
-
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>

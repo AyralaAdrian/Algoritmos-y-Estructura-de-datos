@@ -24,7 +24,7 @@ struct ty_prenda{
 struct ty_Modelo{
 	
 	string descripcion;
-	float descuento;	//Porcentaje a aplicar en concepto de descuento para el modelo
+	float descuento;	/// Porcentaje a aplicar en concepto de descuento para el modelo
 
 };
 
@@ -51,7 +51,9 @@ struct tyAcumuladores{
 	int unidadesVendidas;
 	
 };
-//cargar el archivo
+
+/// cargar el archivo
+
 void cargarVendedores(char arch[], tyVendedores v[], int tope){
 	
 	tyVendedores vendedor;
@@ -76,7 +78,9 @@ void cargarVendedores(char arch[], tyVendedores v[], int tope){
 	}
 	
 }
-//mostrar el vector con los archivos cargados con su strcut
+
+/// mostrar el vector con los archivos cargados con su strcut
+ 
 void mostrarVendedor(tyVendedores v[], int tope){
 	
 	for(int i = 0; i < tope; i++){
@@ -87,7 +91,9 @@ void mostrarVendedor(tyVendedores v[], int tope){
 	}
 	
 }
-//busqueda por string
+
+/// busqueda por string
+
 int buscarPrenda(ty_prenda vP[], int tope, string valor){
 	
 	int i = 0;
@@ -102,7 +108,9 @@ int buscarPrenda(ty_prenda vP[], int tope, string valor){
 	return i;
 	
 }
-// este es el ingreso y validacion de los datos
+
+/// este es el ingreso y validacion de los datos
+
 void ingreseVenta(tyVenta &venta, ty_prenda vecP[], int topeP, int &iP){
 	
 	fflush(stdin);
@@ -147,7 +155,9 @@ void ingreseVenta(tyVenta &venta, ty_prenda vecP[], int topeP, int &iP){
 	}
 	
 }
-// inicio y declaro la matriz
+
+/// inicio y declaro la matriz
+
 void iniMat(tyAcumuladores m[][TOPEV], int tf, int tc){
 	
 	for(int i = 0; i < tf; i++){
@@ -158,7 +168,9 @@ void iniMat(tyAcumuladores m[][TOPEV], int tf, int tc){
 	}
 	
 }
-//muestro la matriz
+
+/// muestro la matriz
+
 void mostrarMat(tyAcumuladores m[][TOPEV], int tf, int tc){
 	
 	for(int f = 0; f < tf; f++){
@@ -170,7 +182,9 @@ void mostrarMat(tyAcumuladores m[][TOPEV], int tf, int tc){
 	}
 	
 }
-// muestro los valores, asigno los indices y calculo los importes de la venta con susu descuentos
+
+/// muestro los valores, asigno los indices y calculo los importes de la venta con sus descuentos
+
 void mostrarVenta(ty_prenda v[], int iP, ty_Modelo vM[], tyVenta vta,tyVendedores vecVendedores[] , float &importe, int &iM, int &iV, int &qVendidas ){
 	
 	iM = v[iP].modelo -1;
@@ -189,14 +203,18 @@ void mostrarVenta(ty_prenda v[], int iP, ty_Modelo vM[], tyVenta vta,tyVendedore
 	cout << " la fue hecha por : " << vecVendedores[iV].nombreApellido << endl;
 	
 }
-//acumular valores en la matriz
+
+/// acumular valores en la matriz
+
 void acumularVenta(tyAcumuladores mat[][TOPEV], int iM, int iV, float precio, int qVendidas){
 	
 	mat[iM][iV].importes += precio;
 	mat[iM][iV].unidadesVendidas += qVendidas ;
 	
 }
-//recorro la matriz por fila 
+
+/// recorro la matriz por fila
+ 
 void mostrarPorCadaModelo(tyAcumuladores m[][TOPEV],ty_Modelo  vM[], tyVendedores vV[], int topef, int topec){
 	
 	float impComi;
@@ -210,7 +228,9 @@ void mostrarPorCadaModelo(tyAcumuladores m[][TOPEV],ty_Modelo  vM[], tyVendedore
 	}
 	
 }
-// recorrida por columnas 
+
+/// recorrida por columnas
+ 
 void porVendedorModeloConMayorQUnidadesVendidas(tyAcumuladores m[][TOPEV], ty_Modelo  vM[], tyVendedores vV[], int topef, int topec){
 
 	int max = 0;
@@ -235,7 +255,9 @@ void porVendedorModeloConMayorQUnidadesVendidas(tyAcumuladores m[][TOPEV], ty_Mo
 	}
 
 }
-//inicio un vector adicional 
+
+/// inicio un vector adicional
+ 
 void iniVecTalles(int v[], int tope){
 	
 	for(int i = 0; i < tope; i++){
@@ -243,14 +265,18 @@ void iniVecTalles(int v[], int tope){
 	}
 	
 }
-//asigno posiciones y valores al vector adicional
+
+/// asigno posiciones y valores al vector adicional
+
 void ventasPorTalle(tyVenta venta, int vec[],int  &iT){
 	
 	iT = venta.talle - 16;
 	vec[iT] += venta.qComprada;	
 	
 }
-//muestro vector adicinal
+
+/// muestro vector adicinal
+
 void mostrarVentasPorTalle(int v[], int tope){
 	
 	for(int i = 0; i < tope; i++){
@@ -274,43 +300,43 @@ int main(){
 	ty_Modelo modelo;
 	char archivo[] = "vendedores.dat";
 	tyVendedores vendedores;
-	//con el registro de "vendedores" los cargo en un vector de vendedores con su estructura
+	/// con el registro de "vendedores" los cargo en un vector de vendedores con su estructura
 	tyVendedores vecVendedores[TOPEV];
-	//declaro los indices 
+	/// declaro los indices 
 	int iPrenda, iM, iV, iT;
 	tyAcumuladores mat[TOPEM][TOPEV];
 	float importe = 0;
 	int qUnidades = 0;
-	//vector adicional
+	/// vector adicional
 	int vecPorTalle[TOPETALLES];
 	
 	iniVecTalles(vecPorTalle, TOPETALLES);
-	//cargo el archivo en el vector
+	/// cargo el archivo en el vector
 	cargarVendedores(archivo ,vecVendedores, TOPEV);
-	//los muestro para ver que todo este bien
+	/// los muestro para ver que todo este bien
 	mostrarVendedor(vecVendedores, TOPEV);
-	//inicio la matriz
+	/// inicio la matriz
 	iniMat(mat, TOPEM, TOPEV);
-	//muestro la matriz
+	/// muestro la matriz
 	mostrarMat(mat, TOPEM, TOPEV);
-	//ingreso y validacion
+	/// ingreso y validacion
 	ingreseVenta(venta, vecPrendas, TOPEPRENDAS, iPrenda);
 	while(venta.codDePrenda != "fin"){
-		//proceso la ventas, asigno indices y mustro los datos de la venta y facturacion 
+		/// proceso la ventas, asigno indices y mustro los datos de la venta y facturacion 
 		mostrarVenta(vecPrendas, iPrenda, vecModelosPrenda, venta,  vecVendedores, importe, iM, iV, qUnidades);
-		//acumulo los valores en la matriz
+		/// acumulo los valores en la matriz
 		acumularVenta(mat, iM, iV, importe, qUnidades);
-		//muestro la matriz para que controlar que todo este bien
+		/// muestro la matriz para que controlar que todo este bien
 		mostrarMat(mat, TOPEM, TOPEV);
-		//acumulo en el vector adicional 
+		/// acumulo en el vector adicional 
 		ventasPorTalle(venta, vecPorTalle, iT);
 		ingreseVenta(venta, vecPrendas, TOPEPRENDAS, iPrenda);
 	}
-	//recorro la matriz por fila
+	/// recorro la matriz por fila
 	mostrarPorCadaModelo(mat,vecModelosPrenda,vecVendedores,TOPEM, TOPEV);
-	//recorro la matriz por columnas
+	/// recorro la matriz por columnas
 	porVendedorModeloConMayorQUnidadesVendidas(mat, vecModelosPrenda, vecVendedores, TOPEM,TOPEV);
-	//muestro el vetor adicional
+	/// muestro el vetor adicional
 	mostrarVentasPorTalle(vecPorTalle, TOPETALLES);
 	
 }

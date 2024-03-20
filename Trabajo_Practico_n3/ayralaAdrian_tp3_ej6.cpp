@@ -1,11 +1,3 @@
-/*Ejercicio 6:
-a) Realizar una rutina que reciba dos arreglos de N y M números enteros
-respectivamente y devuelva un arreglo resultante con la unión de ambos
-arreglos sin repetir valores.
-b) Analizar el ejercicio a) pero considerando ambos arreglos ordenados
-previamente. ¿Modificaría la estrategia de solución? ¿Si es asi, se obtiene un
-algoritmo más eficiente*/
-
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
@@ -46,7 +38,6 @@ int main(){
 	int vec2[TOPEM] = {0, 9, 3, 7, 10};
 	int vec3[TOPE3];  
 	int topeAuxiliar = 0;
-
 	
 	for(int i = 0; i < TOPEN; i++){
 		if(buscarValor(vec3, topeAuxiliar, vec[i])	== -1){

@@ -1,22 +1,3 @@
-/*Ejercicio 9:
-Una Empresa dedicada a realizar servicios para fiestas, nos pide la confección
-de un programa que les permita obtener algunos datos estadísticos procesando
-la información que tienen de las fiestas que se van a realizar.
-Para ello ingresan la siguiente información ya validada:
-- Fecha de la fiesta (string)
-- Tipo de fiesta (.C., .S., .O.)
-- Cantidad de personas (Entero)
-- Nro de menú elegido (1, ó 2)
-Se pide:
-a) Informar cuantas fiestas hay de cada tipo.
-b) Para cada tipo de menú, la fecha para la cuál se realizará la fiesta con mayor
-cantidad de personas (suponer único máximo)
-c) El promedio de personas de todas las fiestas.
-d) Considerar como debería venir la información si se pidiese informar la
-Cantidad total de personas y de fiestas por cada día. (Por Ejemplo:)
-Para el día 03/05/2006 se contabilizaron un total de 560 personas en 4 fiestas.
-Para el día 04/05/2006 se contabilizaron un total de 305 personas en 2 fiestas.*/
-
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
@@ -52,10 +33,8 @@ void ingreseFiesta(tyFiesta &fiesta){
 		cin >> fiesta.qPersonas;
 		cout << "ingrse el tipo de menu (1 0 2): " << endl;
 		cin >> fiesta.menu;	
-	
 	} 
-	
-	
+		
 }
 
 void tipoDeFiesta(tyFiesta &fiesta, tyContador &contador ){
@@ -78,7 +57,6 @@ void tipoDeFiesta(tyFiesta &fiesta, tyContador &contador ){
 void fiestaMayorQPersonasXMenu(tyFiesta &fiesta, int &mayor, int &menu, string &fecha){
 	
 	if(fiesta.qPersonas > mayor){
-		
 		mayor = fiesta.qPersonas;
 		menu = fiesta.menu;
 		fecha = fiesta.fecha;	
