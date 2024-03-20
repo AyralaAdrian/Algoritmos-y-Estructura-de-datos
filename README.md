@@ -1,1 +1,1 @@
-### Algoritmos y estructuras de datos
+Algoritmos y estructuras de datos
